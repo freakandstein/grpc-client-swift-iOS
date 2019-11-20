@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZUa-3U-NQR">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Choose RPC Call-->
+        <scene sceneID="F5R-Me-SSi">
+            <objects>
+                <viewController id="4uQ-CS-gT7" customClass="MainViewController" customModule="GrpcClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="52j-k6-j3d">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Hz7-1O-ZWA">
+                                <rect key="frame" x="16" y="348" width="382" height="200"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npt-CJ-wuQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="42.5"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Unary Call">
+                                            <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onUnaryCallButtonClicked:" destination="4uQ-CS-gT7" eventType="touchUpInside" id="aEr-ho-74g"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qqr-bA-vk6">
+                                        <rect key="frame" x="0.0" y="49.5" width="382" height="42.5"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Client Stream Call">
+                                            <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onClientStreamCallButtonClicked:" destination="4uQ-CS-gT7" eventType="touchUpInside" id="M6S-ph-aVm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XB2-qJ-uOr">
+                                        <rect key="frame" x="0.0" y="99" width="382" height="42.5"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Server Stream Call">
+                                            <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onServerStreamCallButtonClicked:" destination="4uQ-CS-gT7" eventType="touchUpInside" id="4Lc-jN-K80"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Rm-gv-Vz6">
+                                        <rect key="frame" x="0.0" y="148.5" width="382" height="51.5"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Client Server Stream Call">
+                                            <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onClientServerStreamCallButtonClicked:" destination="4uQ-CS-gT7" eventType="touchUpInside" id="kac-te-UVK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="j9E-KH-3S3"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Hz7-1O-ZWA" firstAttribute="centerY" secondItem="52j-k6-j3d" secondAttribute="centerY" id="V3e-Xr-x77"/>
+                            <constraint firstItem="Hz7-1O-ZWA" firstAttribute="leading" secondItem="zfM-tO-cg6" secondAttribute="leading" constant="16" id="fpE-rO-bII"/>
+                            <constraint firstItem="Hz7-1O-ZWA" firstAttribute="centerX" secondItem="52j-k6-j3d" secondAttribute="centerX" id="gde-6F-Mtu"/>
+                            <constraint firstItem="zfM-tO-cg6" firstAttribute="trailing" secondItem="Hz7-1O-ZWA" secondAttribute="trailing" constant="16" id="l7i-ay-IJ8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zfM-tO-cg6"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Choose RPC Call" id="UG8-3o-zse"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7SR-hL-amF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="197.10144927536234" y="127.90178571428571"/>
+        </scene>
+        <!--Service Call View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ServiceCallViewController" id="BYZ-38-t0r" customClass="ServiceCallViewController" customModule="GrpcClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YBH-AD-dM9">
+                                <rect key="frame" x="32" y="431" width="350" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohp-I9-3Ci">
+                                <rect key="frame" x="32" y="472.5" width="350" height="30"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="SEND">
+                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSendButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pP6-D6-MNB"/>
+                                </connections>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oaI-Cf-d2j">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem id="vV0-ZH-Hqr">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="1aA-1d-mbv">
+                                            <connections>
+                                                <action selector="onDismissClicked:" destination="BYZ-38-t0r" id="TrR-jt-2gF"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ohp-I9-3Ci" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YBH-AD-dM9" secondAttribute="leading" id="9Yw-pD-5sp"/>
+                            <constraint firstItem="Ohp-I9-3Ci" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QsC-Ws-Vbh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oaI-Cf-d2j" secondAttribute="trailing" id="SWO-MB-S2f"/>
+                            <constraint firstItem="Ohp-I9-3Ci" firstAttribute="top" secondItem="YBH-AD-dM9" secondAttribute="bottom" constant="7.5" id="TUr-T5-C5H"/>
+                            <constraint firstItem="Ohp-I9-3Ci" firstAttribute="trailing" secondItem="YBH-AD-dM9" secondAttribute="trailing" id="ZCr-dg-95L"/>
+                            <constraint firstItem="oaI-Cf-d2j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dZQ-d4-6tU"/>
+                            <constraint firstItem="oaI-Cf-d2j" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="h7t-ji-fw3"/>
+                            <constraint firstItem="YBH-AD-dM9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pMg-fL-6en"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YBH-AD-dM9" secondAttribute="trailing" constant="32" id="tOf-UY-wqy"/>
+                            <constraint firstItem="YBH-AD-dM9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wht-PD-sw2"/>
+                            <constraint firstItem="YBH-AD-dM9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="yua-gl-epy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="messageText" destination="YBH-AD-dM9" id="83x-Kw-oYm"/>
+                        <outlet property="navigationBar" destination="oaI-Cf-d2j" id="cR7-1q-r9O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1210" y="128"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="txE-jp-9oz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZUa-3U-NQR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="P4H-Op-SSg">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4uQ-CS-gT7" kind="relationship" relationship="rootViewController" id="x5r-x8-aw7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ygl-QY-gMs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-713.04347826086962" y="127.90178571428571"/>
+        </scene>
+    </scenes>
+</document>
