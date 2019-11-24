@@ -24,3 +24,8 @@ You may see our repository [gRPC Server in Java](https://github.com/freakandstei
 
 ## Additional Scenario
 1. I tried to integrate Realm Swift with gRPC on Server Stream and Client Server Stream (Bidirectional) RPC. I assumed the scenario was iOS receives data update from server and from iOS side will be updated for the data. Currently I just want to show how we can integrate Realm Swift with gRPC
+
+## Credits
+1. Thanks to https://github.com/grpc/grpc-swift/tree/nio
+2. Thanks go https://grpc.io
+3. Thanks to Moka iOS Engineer Team
