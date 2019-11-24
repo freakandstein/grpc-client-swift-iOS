@@ -22,5 +22,5 @@ The purpose of source code i wrote to show how to use 4 kind of RPC types in Swi
 
 You may see our repository [gRPC Server in Java](https://github.com/freakandstein/grpc-server-java) again to remind what of definitions from those RPCs
 
-## Scenario
+## Additional Scenario
 1. I tried to integrate Realm Swift with gRPC on Server Stream and Client Server Stream (Bidirectional) RPC. I assumed the scenario was iOS receives data update from server and from iOS side will be updated for the data. Currently I just want to show how we can integrate Realm Swift with gRPC
