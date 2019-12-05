@@ -10,10 +10,6 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     private func goToServiceCallViewController(_ serviceCallType: ServiceCall) {
         guard let serviceCallViewController = getViewController(viewControllerClass: ServiceCallViewController.self) as? ServiceCallViewController else { return }
         serviceCallViewController.serviceCallType = serviceCallType
@@ -24,11 +20,11 @@ class MainViewController: UIViewController {
             case .getUnaryCall:
                 serviceCallViewController.navigationBar.topItem?.title = "Unary Call"
             case .getClientStreamCall:
-            serviceCallViewController.navigationBar.topItem?.title = "Client Stream Call"
+                serviceCallViewController.navigationBar.topItem?.title = "Client Stream Call"
             case .getServerStreamCall:
-            serviceCallViewController.navigationBar.topItem?.title = "Server Stream Call"
+                serviceCallViewController.navigationBar.topItem?.title = "Server Stream Call"
             case .getClientServerStreamCall:
-            serviceCallViewController.navigationBar.topItem?.title = "Client Server Stream Call"
+                serviceCallViewController.navigationBar.topItem?.title = "Client Server Stream Call"
             }
         })
     }

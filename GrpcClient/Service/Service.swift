@@ -21,7 +21,6 @@ class Service {
     private var salesType: SalesType? // Model to test saving data in Realm during stream from server is active
 
     init() {
-        salesType = SalesTypeHelper.getById(id: 1)
         if clientService == nil {
             clientService = MessengerServiceClient(address: address, secure: false)
             print("GRPC version \(gRPC.version) - endpoint: \(address)")
@@ -34,6 +33,7 @@ class Service {
         - Parameter text: String
      */
     func requestGetUnary(text: String) throws {
+        salesType = SalesTypeHelper.getById(id: 1)
         var requestMessage = MessageRequest()
         requestMessage.text = text
         _ = try clientService?.getMessageUnary(requestMessage, completion: { (response, callResult) in
@@ -51,6 +51,7 @@ class Service {
         - Parameter text: String
      */
     func requestGetServerStream(text: String) throws {
+        salesType = SalesTypeHelper.getById(id: 1)
         var requestMessage = MessageRequest()
         requestMessage.text = text
         serverStreamCall = try clientService?.getMessageServerStream(requestMessage, completion: { (callResult) in
@@ -97,6 +98,7 @@ class Service {
        - Parameter text: String
     */
     func requestGetClientStream(text: String) throws {
+        salesType = SalesTypeHelper.getById(id: 1)
         clientStreamCall = try clientService?.getMessageClientStream(completion: { (callResult) in
             if callResult.success {
                 print("Request Get Client Stream Call is successfully")
@@ -127,6 +129,7 @@ class Service {
        - Parameter text: String
     */
     func requestGetClientServerStream(text: String) throws {
+        salesType = SalesTypeHelper.getById(id: 1)
         clientServerStreamCall = try clientService?.getMessageClientServerStream(completion: { (callResult) in
             if callResult.success {
                 print("Request Bidirectional Stream Call is successfully")
@@ -150,9 +153,9 @@ class Service {
                             self.salesType?.name = result.text
                         }
                         /// Make sure data in Realm model SalesType has been updated successfuly from data stream server
-                        if let salesType = SalesTypeHelper.getById(id: 1) {
-                            print("Sales Type : \(salesType.name)")
-                        }
+//                        if let salesType = SalesTypeHelper.getById(id: 1) {
+//                            print("Sales Type : \(salesType.name)")
+//                        }
                     }
                     try self.receiveClientServerStream()
                 }catch(let error) {

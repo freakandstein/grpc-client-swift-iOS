@@ -40,6 +40,7 @@ class ServiceCallViewController: UIViewController {
             case .getClientServerStreamCall:
                 try Service.shared.requestGetClientServerStream(text: message)
             }
+            messageText.text = ""
         } catch {
             print("Service call error")
         }
